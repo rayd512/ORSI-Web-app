@@ -5,7 +5,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 
 import { useCollection } from "react-firebase-hooks/firestore";
-import { collection } from "firebase/firestore";
+import { collection, query, orderBy } from "firebase/firestore";
 
 firebase.initializeApp({
   apiKey: process.env.FIREBASE_API,
@@ -29,7 +29,9 @@ function App() {
 }
 
 function ResistorSessions() {
-  const [sessions] = useCollection(collection(firestore, "sessions"));
+  const [sessions] = useCollection(
+    query(collection(firestore, "sessions"), orderBy("time", "desc"))
+  );
   return (
     <>
       <section className="p-4 grid gap-4 grid-cols-auto">
