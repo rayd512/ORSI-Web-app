@@ -133,11 +133,11 @@ function Modal(props) {
                                   </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                                  <tr className="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    {scans.docs.map((scan) => (
+                                  {scans.docs.map((scan) => (
+                                    <tr className="hover:bg-gray-100 dark:hover:bg-gray-700">
                                       <ScannedTable key={scan.id} scan={scan} />
-                                    ))}
-                                  </tr>
+                                    </tr>
+                                  ))}
                                 </tbody>
                               </table>
                             </div>
