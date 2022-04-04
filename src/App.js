@@ -22,9 +22,25 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Nav />
         <ResistorSessions />
       </header>
     </div>
+  );
+}
+
+function Nav() {
+  return (
+    <nav class="bg-gray-900 text-gray-200 shadow-lg px-2 sm:px-4 py-2.5 rounded">
+      <div class="grid place-items-center">
+        <a href="/" class="flex items-center">
+          <img src="favicon.ico" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+          <span class="text-xl font-semibold whitespace-nowrap dark:text-white">
+            ORSI Central Database
+          </span>
+        </a>
+      </div>
+    </nav>
   );
 }
 
@@ -52,18 +68,16 @@ function Card(props) {
     <div>
       <div className="flex w-full items-center dark:bg-gray-900 justify-center">
         <div>
-          <div className="w-64 h-64 flex flex-col bg-white dark:bg-gray-800 rounded-lg border border-gray-400 mb-6 py-5 px-4">
+          <div className="w-64 h-64 flex flex-col bg-gray-800 rounded-lg border border-gray-400 mb-6 py-5 px-4">
             <div>
-              <h4 className="text-gray-800 dark:text-gray-100 font-bold mb-3 text-center">
+              <h4 className="text-gray-100 font-bold mb-3 text-center">
                 {date}
               </h4>
-              <p className="text-gray-800 dark:text-gray-100 text-sm text-center">
-                {localTime}
-              </p>
+              <p className="text-gray-100 text-sm text-center">{localTime}</p>
             </div>
             <div className="flex text-5xl flex-col items-center justify-center text-gray-800 mt-8 mb-2">
-              <span className="text-gray-1000 mb-2">{total}</span>
-              <p className="text-sm dark:text-gray-100">Resistors Scanned</p>
+              <span className="text-gray-100 mb-2">{total}</span>
+              <p className="text-sm text-gray-100">Resistors Scanned</p>
             </div>
             <Modal id={props.session.id} />
           </div>
